@@ -1,1 +1,21 @@
-
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: ms-1-dev
+  namespace: argocd
+spec:
+  project: dev
+  source:
+    repoURL: https://github.com/jisna-testingmavens/infra-repo-env.git
+    targetRevision: main
+    path: charts/app
+    helm:
+      valueFiles:
+        - envs/dev/ms-1-values.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: dev
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
