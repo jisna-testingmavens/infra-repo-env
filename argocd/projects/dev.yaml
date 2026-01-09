@@ -1,1 +1,14 @@
-
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: dev
+  namespace: argocd
+spec:
+  destinations:
+    - namespace: dev
+      server: https://kubernetes.default.svc
+  sourceRepos:
+    - https://github.com/jisna-testingmavens/infra-repo-env.git
+  clusterResourceWhitelist:
+    - group: ""
+      kind: Namespace
