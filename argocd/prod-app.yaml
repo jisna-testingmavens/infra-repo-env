@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/<org>/infra.git
+    repoURL: https://github.com/jisna-testingmavens/ms-1.git
     path: helm/ms-1
     targetRevision: main
     helm:
