@@ -1,5 +1,0 @@
-replicaCount: 1
-
-image:
-  repository: 756827365110.dkr.ecr.us-east-1.amazonaws.com/test-pipeline-repo
-  tag: ""   # CI WILL WRITE COMMIT ID HERE
