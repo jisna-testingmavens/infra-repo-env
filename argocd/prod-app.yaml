@@ -6,12 +6,12 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/jisna-testingmavens/ms-1.git
-    path: helm/ms-1
+    repoURL: https://github.com/jisna-testingmavens/infra-repo-env.git
     targetRevision: main
+    path: helm/ms-1
     helm:
       valueFiles:
-        - values-dev.yaml
+        - values-prod.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: prod
@@ -19,4 +19,3 @@ spec:
     automated:
       prune: true
       selfHeal: true
-
